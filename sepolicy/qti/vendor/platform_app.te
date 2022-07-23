@@ -17,3 +17,7 @@ allow platform_app vendor_xdsp_device:chr_file r_file_perms;
 rw_dir_file(platform_app, vendor_sysfs_battery_supply)
 
 binder_call(platform_app, hal_camera_default)
+
+allow platform_app hal_ifaa_hwservice:hwservice_manager find;
+
+binder_call(platform_app, hal_ifaa_default)
