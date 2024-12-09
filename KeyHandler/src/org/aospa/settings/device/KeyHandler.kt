@@ -60,7 +60,7 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
             return event
         }
 
-        if (inputManager.getInputDevice(event.deviceId).name != "oplus,hall_tri_state_key") {
+        if (inputManager?.getInputDevice(event.deviceId)?.name != "oplus,hall_tri_state_key") {
             return event
         }
 
@@ -75,8 +75,8 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
 
     private fun vibrateIfNeeded(mode: Int) {
         when (mode) {
-            AudioManager.RINGER_MODE_VIBRATE -> vibrator.vibrate(MODE_VIBRATION_EFFECT)
-            AudioManager.RINGER_MODE_NORMAL -> vibrator.vibrate(MODE_NORMAL_EFFECT)
+            AudioManager.RINGER_MODE_VIBRATE -> vibrator?.vibrate(MODE_VIBRATION_EFFECT)
+            AudioManager.RINGER_MODE_NORMAL -> vibrator?.vibrate(MODE_NORMAL_EFFECT)
         }
     }
 
@@ -92,25 +92,25 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
 
         when (mode) {
             AudioManager.RINGER_MODE_SILENT -> {
-                notificationManager.setZenMode(Settings.Global.ZEN_MODE_OFF, null, TAG)
-                audioManager.setRingerModeInternal(mode)
+                notificationManager?.setZenMode(Settings.Global.ZEN_MODE_OFF, null, TAG)
+                audioManager?.setRingerModeInternal(mode)
                 if (muteMedia) {
-                    audioManager.adjustVolume(AudioManager.ADJUST_MUTE, 0)
+                    audioManager?.adjustVolume(AudioManager.ADJUST_MUTE, 0)
                     wasMuted = true
                 }
             }
             AudioManager.RINGER_MODE_VIBRATE, AudioManager.RINGER_MODE_NORMAL -> {
-                notificationManager.setZenMode(Settings.Global.ZEN_MODE_OFF, null, TAG)
-                audioManager.setRingerModeInternal(mode)
+                notificationManager?.setZenMode(Settings.Global.ZEN_MODE_OFF, null, TAG)
+                audioManager?.setRingerModeInternal(mode)
                 if (muteMedia && wasMuted) {
-                    audioManager.adjustVolume(AudioManager.ADJUST_UNMUTE, 0)
+                    audioManager?.adjustVolume(AudioManager.ADJUST_UNMUTE, 0)
                 }
             }
             ZEN_PRIORITY_ONLY, ZEN_TOTAL_SILENCE, ZEN_ALARMS_ONLY -> {
-                audioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL)
-                notificationManager.setZenMode(mode - ZEN_OFFSET, null, TAG)
+                audioManager?.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL)
+                notificationManager?.setZenMode(mode - ZEN_OFFSET, null, TAG)
                 if (muteMedia && wasMuted) {
-                    audioManager.adjustVolume(AudioManager.ADJUST_UNMUTE, 0)
+                    audioManager?.adjustVolume(AudioManager.ADJUST_UNMUTE, 0)
                 }
             }
         }
