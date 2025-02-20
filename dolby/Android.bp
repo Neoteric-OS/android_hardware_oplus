@@ -6,7 +6,8 @@
 //
 
 android_app {
-    name: "DolbyManager",
+    name: "OplusDolby",
+
     srcs: ["src/**/*.kt"],
     resource_dirs: ["res"],
     certificate: "platform",
@@ -14,13 +15,23 @@ android_app {
     system_ext_specific: true,
     privileged: true,
 
-    overrides: ["MusicFX"],
+    overrides: ["MusicFX", "AudioFX"],
     static_libs: [
         "SettingsLib",
         "SpaLib",
         "androidx.activity_activity-compose",
-        "androidx.compose.material3_material3",
         "androidx.compose.runtime_runtime",
         "androidx.preference_preference",
+        "com.google.android.material_material",
+        "co.aospa.resources",
     ],
+
+    required: ["preinstalled-packages-platform-dolby.xml"],
+}
+
+prebuilt_etc {
+    name: "preinstalled-packages-platform-dolby.xml",
+    src: "preinstalled-packages-platform-dolby.xml",
+    sub_dir: "sysconfig",
+    system_ext_specific: true,
 }
