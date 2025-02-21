@@ -29,9 +29,9 @@ LOCAL_C_INCLUDES += \
     $(call include-path-for, audio-route) \
     $(call include-path-for, audio-utils) \
     external/tinycompress/include \
-    vendor/qcom/opensource/audio-hal/primary-hal/hal/audio_extn \
-    vendor/qcom/opensource/audio-hal/primary-hal/hal/msm8974 \
-    vendor/qcom/opensource/audio-hal/primary-hal/hal
+    hardware/qcom-caf/sm8250/audio/hal/audio_extn \
+    hardware/qcom-caf/sm8250/audio/hal/msm8974 \
+    hardware/qcom-caf/sm8250/audio/hal
 
 LOCAL_HEADER_LIBRARIES += \
     qti_kernel_headers \
