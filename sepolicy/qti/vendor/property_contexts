@@ -5,6 +5,7 @@ ro.vendor.oplus.regionmark              u:object_r:vendor_audio_debug_prop:s0
 # Camera
 ro.vendor.camera.res.          u:object_r:vendor_camera_prop:s0
 ro.vendor.oplus.camera.        u:object_r:vendor_camera_prop:s0
+vendor.camera.skip_unconfigure. u:object_r:vendor_camera_prop:s0
 vendor.camera.vm.parameters    u:object_r:vendor_camera_prop:s0
 vendor.oplus.camera.           u:object_r:vendor_camera_prop:s0
 vendor.oppo.camera.            u:object_r:vendor_camera_prop:s0

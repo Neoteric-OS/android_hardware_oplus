@@ -8,7 +8,8 @@ oplus.autotest.                u:object_r:exported_system_prop:s0
 persist.sys.oplus.autotest.    u:object_r:exported_system_prop:s0
 
 # Bluetooth
-persist.sys.bt.a2dp.pendingtime    u:object_r:exported_system_prop:s0
+persist.sys.bt.a2dp.pendingtime         u:object_r:exported_system_prop:s0
+ro.bluetooth.leaudio_offload.supported  u:object_r:exported_system_prop:s0
 
 # Camera
 cam.algo.                        u:object_r:exported_system_prop:s0
@@ -24,6 +25,7 @@ ro.oppo.market.                  u:object_r:exported_system_prop:s0
 
 # Display
 awb.purecolor.enable               u:object_r:exported_system_prop:s0
+awb.wbcore.inst.enable             u:object_r:exported_system_prop:s0
 persist.oplus.display.vrr.adfr     u:object_r:exported_system_prop:s0
 persist.sys.display.iris.absent    u:object_r:system_oplus_iris_prop:s0
 ro.oplus.display.                  u:object_r:exported_system_prop:s0
